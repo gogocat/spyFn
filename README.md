@@ -38,6 +38,10 @@ spyFn({
 validateCreditCard(12345678);
 // before callback log -> [12345678]
 // after callback log -> true, [888888]
+
+// stop spy and restore to original function
+validateCreditCard.stopSpy();
+
 ```
 
 
