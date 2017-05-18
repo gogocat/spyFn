@@ -5,9 +5,13 @@
 # SpyFn
 
 Spy on a function with 'Before' and 'After' callbacks. This is achieved by manipulate the function reference at run time.
+
 It can spy on on a method in an object or any global function.
+
 The 'Before' callback will receive the caller's arguments as array allowing to intercept the call and modify the arguments before pass to the original function.
+
 The 'After' callbacl will receive the return result from the original function call. Also the executed arguments.
+
 The original function can be restore to normal by calling stopSpy.
 
 **Example**
@@ -24,7 +28,8 @@ spyFn({
 	fnName: 'validateCreditCard',
 	before: function(arg) {
 		console.log(arg);
-		// reurn a moidfied argument array
+		// intercepted the call and we have chance to modify the caller's parameters
+		// let's modify it by return an array
 		return [888888];
 	},
 	after: function(isValid, arg) {
