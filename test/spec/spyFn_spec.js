@@ -108,5 +108,22 @@ describe("Given spyFn is running", function() {
 
 	});
 
+	// test spy on global function
+	it("when call stopSpy on spying function. it should restore the original function", function() {
+		var retBefore,
+			retResult,
+			retAfter;
+
+		// call stopSpy
+		validateCreditCard.stopSpy();
+
+		validateCreditCard(999999);
+
+		expect(retBefore).toBeUndefined();
+		expect(retResult).toBeUndefined();
+		expect(retAfter).toBeUndefined();
+
+	});
+
 });
 
